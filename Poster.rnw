@@ -1,0 +1,295 @@
+\documentclass[final]{beamer}
+\usefonttheme{serif}
+\mode<presentation>{\usetheme{UNM}}
+\usepackage{amsmath, amsfonts, amssymb, color, graphicx}
+\usepackage{lipsum} % filler text
+\usepackage[orientation=portrait, size=a0, scale=1.3, debug]{beamerposter}
+  % A0 is (33.1 in x 46.8 in), which is roughly 3' x 4'
+\usepackage{natbib}
+
+% # R:
+%   setwd("Users/vkoushikmuthyapu/desktop/ADA1")
+%   fn <- "ADA1_Poster_NESARC_ProfErhardt";
+%     fn.temp.for.RData <- fn
+%     fn.noext <- fn;
+%     fn.rnw <- paste(fn, ".Rnw", sep="");
+%     fn.tex <- paste(fn, ".tex", sep="");
+%     fn.pdf <- paste(fn, ".pdf", sep="");
+%   #load(".RData")  # Read data file with variables defined
+%   library(knitr);
+%   purl(fn.rnw, documentation=0)
+%   knit(fn.rnw);
+%   system(paste("bibtex ", fn.noext, sep=""))
+%   system(paste("pdflatex.exe -shell-escape ", fn.tex, sep=""))
+%   #system(paste("pdflatex.exe -shell-escape ", fn.tex, sep=""))
+%   system(paste("open ", fn.pdf))
+
+
+% Beamer poster THEMES
+\usetheme{default}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+%-- Header and footer information ----------------------------------
+% Header
+\def\conference{ADA1 Poster Session \\ \vspace{1ex} UNM Stat 427/527 \\ Fall 2019}
+\title{Worry is associated with sleep-length and anxiety disorder}
+\author{Venkat Koushik}
+\institute{Department of Mathematics and Statistics \\ University of New Mexico}
+% Footer
+\newcommand{\footright}{UNM Stat 427/527 Advanced Data Analysis 1, Fall 2019}
+\newcommand{\footleft}{Prof.\ Erik B.\ Erhardt}
+%-------------------------------------------------------------------
+
+%-- Main Document --------------------------------------------------
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+%\SweaveOpts{concordance=TRUE}
+\begin{frame}[fragile]
+%\vspace{-2ex}
+\begin{columns}[t]
+
+%% Add your HW file's *.R file (from knitr::perl()) here
+<<source, cache=TRUE, comment = NA, echo = FALSE, message = FALSE, warning=FALSE, results="tex", include=FALSE>>=
+setwd("/Users/vkoushikmuthyapu/desktop/Poster")
+source("Poster_Req_Material.R")
+@
+
+<<setup, comment = NA, echo = FALSE, message = FALSE, warning=FALSE>>=
+library(knitr)
+options(width = 80)
+opts_chunk$set(echo=FALSE, comment = NA, fig.align='center', out.width='0.75\\textwidth', cache=FALSE, warning = FALSE, message = FALSE)
+@
+%$
+
+%---------------------------------------------------------------
+%-- Column 1 ---------------------------------------------------
+\begin{column}{0.49\linewidth}
+\begin{minipage}[t][.955\textheight]{\linewidth}
+%-- Block 1-1
+% \vspace{0ex}
+\begin{block}{Introduction}
+\hfill
+
+In this poster, I emphasized the significant impacts that effect health due to extreme worrying. Although worrying over a few issues is way of showing emotions in life, studies show that worrying extremely over trival matters is a sign of generalized anxiety disorder (GAD). These research results show that people with anxiety disorder are more likely to be sleep deprived which is another major effect it has on health is sleep. 
+
+Sleep Length is associated with worry.
+
+\begin{itemize}
+\item The longitudinal investigations have shown that worry significantly reduces the length of sleep \cite{kelly2002worry, kelly2003worry, mcgowan2016examining}
+\item Many studies have claimed that sleep length is positively associated with worry and results have shown that worry leads to sleep deprivation \cite{kelly2002worry, kelly2003worry, mcgowan2016examining}
+\end{itemize}
+
+Worry and Anxiety disorder
+
+\begin{itemize}
+\item Although occasional anxiety is normal, studies claim that people who worry extremely about things-even where little or no reason to worry for them are most likely to have generalized anxiety disorder (GAD) \cite{oathes2008worry, borkovec1999role}
+\item Few other studies show that worry leads to negative emotion in people diagnosed with GAD. \cite{oathes2008worry, borkovec1999role}
+\end{itemize}
+
+%\vspace{0ex}
+%\lipsum[1-1]
+\end{block}
+\vfill
+
+%-- Block 1-2
+\begin{block}{Research questions}
+\hfill
+
+The goals of the analysis include answering these two questions:
+
+\begin{itemize}
+\item Is there an association between worry and sleep length?
+\item Does the prevalence of anxiety disorder differ on the length of sleep?
+\end{itemize}
+%\vspace{0ex}
+\vfill
+\end{block}
+\vfill
+
+%-- Block 1-3
+\begin{block}{Methods}
+\textbf{Data sources}  \hfill {\large\sc Week 2}
+
+\begin{enumerate}
+\item A sample from the fouth wave of the National Longitudinal Study of
+Adolescent Health (Add Health Wave 4), We focused on worry(15667 respondants),
+Anxity(15699 respondants), Regular Sleep time and wake-up time.
+\end{enumerate}
+
+\textbf{Measures/Variables}
+\begin{enumerate}
+\item (\verb|Worry|, SA = strongly agree, A = agree, NA = neither agree nor disagree, D = disagree, SD = strongly disagree) as my independent variable and (\verb|Wake_SleeL|, lenght of sleep)$y$ for testing my first hypothesis.
+\item (\verb|anxity|, 0 = no, 1= yes) as my dependent variable and worry as my independent variables for testing second hypothesis
+\end{enumerate}
+
+\textbf{Methods}
+\begin{enumerate}
+\item A kruskal wallis test (non-parametric ANOVA test) comparing the median of sleep-lenght by
+worry.
+\item A $\chi^2$ analysis of a two-way contingency table of anxiety disorder by
+worry.
+\end{enumerate}
+%\vspace{0ex}
+\end{block}
+\vfill
+
+
+%% Moved last parts here so Results are second column
+%-- Block 3-2
+\begin{block}{Discussion}
+\hfill
+
+\begin{itemize}
+\item The findings of this research are important as health plays a vital role in life. With this data, it is easy to understand the effects of worrying extremely and also bring awareness to the community.
+\item These results support the previous literature and based on the results we found an association between worry and anxiety disorders as well as with sleep-length. Our results in context with the references prove that people who worry extensively over trival matters are likely to have anxiety disorders and also a differnet sleep-lenght.
+\end{itemize}
+
+\vspace{0ex}
+\vfill
+\end{block}
+\vfill
+
+%-- Block 3-3
+\begin{block}{Further directions}
+\begin{itemize}
+\item From the results out of my tests it is clear that there is an association between worry and sleep as well as worry and anxiety diorder. Now the thing I want to investigate furture with these results and data is what kind of association is this. I want to know if this is a possitive association or a negative association.
+\end{itemize}
+\vspace{0ex}
+\vfill
+\end{block}
+\vfill
+
+%-- Block 3-4
+\begin{block}{References}
+\hfill
+\footnotesize
+
+%\bibliographystyle{plainnat}     % http://merkel.zoneo.net/Latex/natbib.php
+\bibliographystyle{plain}  % can use plain but comment out natbib at top if using plain
+\bibliography{bib_example}
+\normalsize
+\vfill
+\end{block}
+
+\end{minipage}
+\end{column}%1
+%---------------------------------------------------------------
+
+
+%---------------------------------------------------------------
+%-- Column 2 ---------------------------------------------------
+\begin{column}{0.49\linewidth}
+\begin{minipage}[t][.955\textheight]{\linewidth}
+
+%-- Block 2-1
+%\vspace{0ex}
+\begin{block}{Worry and sleep length}
+
+\bigskip
+\bigskip
+
+`` At least one group's median of worry variable is different from other groups.''
+$\eta = \mu_{SA} = \mu_A = \mu_{NA} = \mu_{SD} = \mu_D$
+
+$H_0: \eta = 0$ versus $H_A: \eta \ne 0$
+
+
+% ----------
+%\vspace{1in}
+
+
+\textbf \hfill 
+
+<<ggplot_mpg_reorder_class_hwy_boxplot_jitter_median, echo=FALSE, include=TRUE, fig.width=5, fig.height=3.5, out.width='0.75\\textwidth'>>=
+
+# QQ plot
+par(mfrow=c(1,1))
+library(car)
+qqPlot(aov_summary$residuals, las = 1, id = list(n = 0, cex = 1), lwd = 1, main="QQ Plot")
+
+
+#### ggplot_mpg_reorder_class_hwy_boxplot_jitter_median
+library(ggplot2)
+#p <- ggplot(addhealth_public4_sub %in% drop_na(wake_sleepL, worry), aes(x = worry, y = wake_sleepL))
+# plot a reference line for the global median (assuming no groups)
+p <- p + geom_hline(yintercept = median(addhealth_public4_sub$wake_sleepL),
+                    colour = "black", linetype = "dashed", size = 0.3, alpha = 0.5)
+# boxplot, size=.75 to stand out behind CI
+p <- p + geom_violin(width = 0.5, alpha = 0.25)
+p <- p + geom_boxplot(width = 0.25, alpha = 0.25)
+# points for observed data
+p <- p + geom_point(position = position_jitter(w = 0.05, h = 0), alpha = 0.2)
+# diamond at median for each group
+p <- p + stat_summary(fun.y = median, geom = "point", shape = 18, size = 4,
+                      colour = "red", alpha = 0.8)
+# confidence limits based on normal distribution
+p <- p + stat_summary(fun.data = "median_cl_normal", geom = "errorbar",
+                      width = .2, colour = "red", alpha = 0.8)
+p <- p + labs(title = "Number of sleep hours by worry")
+p <- p + ylab("Square-root of sleep hours")
+print(p)
+@
+
+\begin{itemize}
+\item Model assumptions are met, the sampling distribution of the above variables are not normal.
+
+\item Because $p=\Sexpr{signif(fit.bt$p.value, 3)} < 0.10$ with $X^2 = 10.113$,
+    we have insufficient evidence to reject $H_0$ at an $\alpha=0.10$ significance level,
+    concluding that the total cigarettes smoked does not differ by depression
+    status.
+
+\item Note that after conluding the alternative hypothesis when tested pair wise comparisons using wilcox test I have observed that the median is different between group that agree and group that disagree.
+
+\end{itemize}
+\end{block}
+
+\vfill
+
+%-- Block 3-1
+%\vspace{0ex}
+\begin{block}{Anxiety disorder by worry}
+%\vspace{-2ex}
+
+``Is there an association between anxiety and how much people worry about things?''
+
+
+<<ex07-mpg-plot2, echo=FALSE, size='tiny', include=TRUE, fig.width=5, fig.height=4, out.width='0.75\\textwidth'>>=
+# mosaic plot
+library(vcd)
+#mosaic(tab_GoalsGrade, shade=TRUE, legend=TRUE)
+# this layout gives us the interpretation we want:
+mosaic(~ anxity + worry, data = addhealth_public4_sub, shade=TRUE, legend=TRUE, direction = "v")
+@
+%$
+
+
+\begin{itemize}
+\item
+The model assumptions are met since the expected count for each cell is at least 5.
+
+\item
+Because the p-value $= \Sexpr{signif(chisq_gg$p.value, 3)} < 0.05$ ($X^2 = \Sexpr{signif(chisq_gg$statistic, 3)}$)
+  we reject the null hypothesis
+  concluding that there is an association between
+  Anxiety disorder and Worry.
+
+\item
+The primary cause of rejecting $H_0$ is that
+ number of peopel who strongly agree that they worry about things and say no to having anxiety disorder are
+ less than expected.
+\end{itemize}
+
+\vspace{-2ex}
+\vfill
+\end{block}
+
+%$
+
+\end{minipage}
+\end{column}%2
+%---------------------------------------------------------------
+
+\end{columns}
+\end{frame}
+\end{document}

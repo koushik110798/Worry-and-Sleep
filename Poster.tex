@@ -1,0 +1,53 @@
+\documentclass[final]{beamer}
+\usefonttheme{serif}
+\mode<presentation>{\usetheme{UNM}}
+\usepackage{amsmath, amsfonts, amssymb, color, graphicx}
+\usepackage{lipsum} % filler text
+\usepackage[orientation=portrait, size=a0, scale=1.3, debug]{beamerposter}
+  % A0 is (33.1 in x 46.8 in), which is roughly 3' x 4'
+\usepackage{natbib}
+
+% # R:
+%   setwd("Users/vkoushikmuthyapu/desktop/ADA1")
+%   fn <- "ADA1_Poster_NESARC_ProfErhardt";
+%     fn.temp.for.RData <- fn
+%     fn.noext <- fn;
+%     fn.rnw <- paste(fn, ".Rnw", sep="");
+%     fn.tex <- paste(fn, ".tex", sep="");
+%     fn.pdf <- paste(fn, ".pdf", sep="");
+%   #load(".RData")  # Read data file with variables defined
+%   library(knitr);
+%   purl(fn.rnw, documentation=0)
+%   knit(fn.rnw);
+%   system(paste("bibtex ", fn.noext, sep=""))
+%   system(paste("pdflatex.exe -shell-escape ", fn.tex, sep=""))
+%   #system(paste("pdflatex.exe -shell-escape ", fn.tex, sep=""))
+%   system(paste("open ", fn.pdf))
+
+
+% Beamer poster THEMES
+\usetheme{default}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+%-- Header and footer information ----------------------------------
+% Header
+\def\conference{ADA1 Poster Session \\ \vspace{1ex} UNM Stat 427/527 \\ Fall 2019}
+\title{Worry is associated with sleep-length and anxiety disorder}
+\author{Venkat Koushik}
+\institute{Department of Mathematics and Statistics \\ University of New Mexico}
+% Footer
+\newcommand{\footright}{UNM Stat 427/527 Advanced Data Analysis 1, Fall 2019}
+\newcommand{\footleft}{Prof.\ Erik B.\ Erhardt}
+%-------------------------------------------------------------------
+
+%-- Main Document --------------------------------------------------
+\usepackage{Sweave}
+\begin{document}
+\input{Poster-concordance}
+%\SweaveOpts{concordance=TRUE}
+\begin{frame}[fragile]
+%\vspace{-2ex}
+\begin{columns}[t]
+
+%% Add your HW file's *.R file (from knitr::perl()) here

@@ -1,0 +1,129 @@
+% adapted from Philippe Dreuw and Thomas Deselaers
+% further adapted from edits by James Malcolm
+% -"- Shawn Lankton made some edits
+% adapted for Appalachian - WmCB (2012/03/10)
+
+\ProvidesPackage{beamerthemeUNM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 2015 poster
+%\definecolor{titlebright}{rgb}{0.98824, 0.91373, 0.30980}               % #fce94f  # butter
+%\definecolor{subtitlemoderate}{rgb}{0.98824, 0.68627, 0.24314}          % #fcaf3e  # orange
+% 2016 poster
+%\definecolor{titlebright}{rgb}{0.6, 1, 1}               % #fce94f  # light blue
+%\definecolor{subtitlemoderate}{rgb}{0.6, 0.6, 1}          % #fcaf3e  # medium blue
+% 2019 poster
+\definecolor{titlebright}{rgb}{0.8, 0.8, 1}               % #fce94f  # light blue
+\definecolor{subtitlemoderate}{rgb}{1, 0.8, 0.8}          % #fcaf3e  # medium blue
+
+\setbeamercolor{headline}{bg=black}
+\setbeamercolor{footline}{bg=black}
+\setbeamerfont{footline}{size=\large}
+\setbeamercolor{separation line}{bg=black}
+\setbeamercolor{title in headline}{fg=titlebright}
+\setbeamercolor{author in headline}{fg=subtitlemoderate}
+\setbeamercolor{institute in headline}{fg=lightgray}
+
+\setbeamercolor{framesubtitle}{fg=blue, bg=gray}
+\setbeamercolor{author in head/foot}{fg=subtitlemoderate,bg=black}
+\setbeamercolor{title in head/foot}{fg=titlebright,bg=black}
+\setbeamercolor{website in footline}{fg=titlebright,bg=black}
+\setbeamercolor{email in footline}{fg=titlebright,bg=black}
+
+\setbeamercolor*{normal text}{fg=black, bg=white}
+\setbeamercolor*{block body}{fg=black,bg=white}
+\setbeamercolor*{block title}{fg=black,bg=lightgray}
+\setbeamerfont{block title}{size=\large,series=\sc\bf}
+\setbeamercolor{upper separation line head}{fg=black}
+
+% \setbeamertemplate{blocks}[rounded][shadow=true]
+
+% \setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.5ex
+  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1ex,colsep*=.5ex]{block title}%
+    \usebeamerfont*{block title}{\Large \insertblocktitle}
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.5ex,sep=.5ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.5ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{%
+  \leavevmode
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.01\paperwidth}
+      \end{column}
+      %\begin{column}{.325\paperwidth}
+      \begin{column}{.25\paperwidth}
+        \vskip8ex
+		\centering
+%        \raggedright
+        \usebeamercolor{institute in headline}{\color{fg}\textbf{\LARGE{\conference}}\\[1ex]}
+        \vskip2ex
+      \end{column}
+      %\begin{column}{.33\paperwidth}
+      \begin{column}{.45\paperwidth}
+        \vskip4ex
+		\centering
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+        \vskip2ex
+      \end{column}
+      %\begin{column}{.325\paperwidth}
+      \begin{column}{.25\paperwidth}
+        \centering
+        %\vskip-100ex
+        %\hspace{25ex}
+        %\includegraphics[height=0.3\paperwidth]{UNM_logo}
+        \includegraphics[width=0.75\textwidth]{UNM_logo}
+        %\vspace{1pt}
+      \end{column}
+      \begin{column}{.01\paperwidth}
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    \usebeamercolor{website in footline}{\color{fg} \footleft}
+    \hfill
+    \usebeamercolor{email in footline}{\color{fg} \footright}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \Mode<all>
